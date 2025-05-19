@@ -18,9 +18,9 @@ func (r *M20250519033301CreateApiSettingTable) Up() error {
 	if !facades.Schema().HasTable("api_setting") {
 		return facades.Schema().Create("api_setting", func(table schema.Blueprint) {
 			table.ID("id")
-			table.Integer("auto_sync").Default(0)
-			table.Integer("edit_profile_siswa").Default(0)
-			table.Integer("edit_profile_guru").Default(0)
+			table.Integer("auto_sync").Default(0).Nullable()
+			table.Integer("edit_profile_siswa").Default(0).Nullable()
+			table.Integer("edit_profile_guru").Default(0).Nullable()
 		})
 	}
 	return nil

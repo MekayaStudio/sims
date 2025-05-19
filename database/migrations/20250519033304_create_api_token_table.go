@@ -18,8 +18,8 @@ func (r *M20250519033304CreateApiTokenTable) Up() error {
 	if !facades.Schema().HasTable("api_token") {
 		return facades.Schema().Create("api_token", func(table schema.Blueprint) {
 			table.ID("id_api")
-			table.DateTime("timestamp")
-			table.Integer("id_user")
+			table.DateTime("timestamp").UseCurrent()
+			table.Integer("id_user").Nullable()
 			table.Text("address")
 			table.Text("agent")
 			table.Text("device")

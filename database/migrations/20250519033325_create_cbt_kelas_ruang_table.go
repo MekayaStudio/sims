@@ -18,12 +18,12 @@ func (r *M20250519033325CreateCbtKelasRuangTable) Up() error {
 	if !facades.Schema().HasTable("cbt_kelas_ruang") {
 		return facades.Schema().Create("cbt_kelas_ruang", func(table schema.Blueprint) {
 			table.String("id_kelas_ruang", 50)
-			table.Integer("id_kelas")
-			table.Integer("id_ruang")
-			table.Integer("id_sesi").Default(0)
-			table.Integer("id_tp")
-			table.Integer("id_smt")
-			table.Integer("set_siswa").Default(0)
+			table.Integer("id_kelas").Nullable()
+			table.Integer("id_ruang").Nullable()
+			table.Integer("id_sesi").Default(0).Nullable()
+			table.Integer("id_tp").Nullable()
+			table.Integer("id_smt").Nullable()
+			table.Integer("set_siswa").Default(0).Nullable()
 		})
 	}
 

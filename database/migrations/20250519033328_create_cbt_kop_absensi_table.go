@@ -18,13 +18,13 @@ func (r *M20250519033328CreateCbtKopAbsensiTable) Up() error {
 	if !facades.Schema().HasTable("cbt_kop_absensi") {
 		return facades.Schema().Create("cbt_kop_absensi", func(table schema.Blueprint) {
 			table.ID("id_kop")
-			table.String("header_1", 100)
-			table.String("header_2", 100)
-			table.String("header_3", 100)
-			table.String("header_4", 100)
-			table.String("proktor", 100)
-			table.String("pengawas_1", 100)
-			table.String("pengawas_2", 100)
+			table.String("header_1", 100).Nullable()
+			table.String("header_2", 100).Nullable()
+			table.String("header_3", 100).Nullable()
+			table.String("header_4", 100).Nullable()
+			table.String("proktor", 100).Nullable()
+			table.String("pengawas_1", 100).Nullable()
+			table.String("pengawas_2", 100).Nullable()
 		})
 	}
 

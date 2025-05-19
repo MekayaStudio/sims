@@ -13,6 +13,9 @@ type Kernel struct {
 
 func (kernel Kernel) Migrations() []schema.Migration {
 	return []schema.Migration{
+		&migrations.M20250519062303CreateSettingTable{},
+		&migrations.M20250519062314CreateUsersGroupsTable{},
+		&migrations.M20250519062319CreateUsersProfileTable{},
 		&migrations.M20240915060148CreateUsersTable{},
 		&migrations.M20250519033301CreateApiSettingTable{},
 		&migrations.M20250519033304CreateApiTokenTable{},

@@ -19,8 +19,8 @@ func (r *M20250519034433CreateCbtNomorPesertaTable) Up() error {
 		return facades.Schema().Create("cbt_nomor_peserta", func(table schema.Blueprint) {
 			table.ID("id_nomor")
 			table.Integer("id_siswa").Nullable()
-			table.Integer("id_tp")
-			table.Integer("id_smt").Default(1)
+			table.Integer("id_tp").Nullable()
+			table.Integer("id_smt").Default(1).Nullable()
 			table.String("nomor_peserta", 20)
 		})
 	}

@@ -19,11 +19,13 @@ func (r *M20250519034442CreateCbtPengawasTable) Up() error {
 		return facades.Schema().Create("cbt_pengawas", func(table schema.Blueprint) {
 			table.String("id_pengawas", 50)
 			table.String("id_jadwal", 50)
-			table.Integer("id_tp")
-			table.Integer("id_smt")
+			table.Integer("id_tp").Nullable()
+			table.Integer("id_smt").Nullable()
 			table.String("id_ruang", 50)
 			table.String("id_sesi", 50)
 			table.String("id_guru", 50)
+
+			table.Primary("id_pengawas")
 		})
 	}
 

@@ -18,9 +18,9 @@ func (r *M20250519034422CreateCbtNilaiTable) Up() error {
 	if !facades.Schema().HasTable("cbt_nilai") {
 		return facades.Schema().Create("cbt_nilai", func(table schema.Blueprint) {
 			table.ID("id_nilai")
-			table.Integer("pg_benar").Default(0)
-			table.String("pg_nilai", 10).Default("0")
-			table.String("essai_nilai", 10).Default("0")
+			table.Integer("pg_benar").Default(0).Nullable()
+			table.String("pg_nilai", 10).Default("0").Nullable()
+			table.String("essai_nilai", 10).Default("0").Nullable()
 			table.Integer("id_siswa").Nullable()
 			table.Integer("id_jadwal").Nullable()
 			table.String("kompleks_nilai", 10).Default("0")
